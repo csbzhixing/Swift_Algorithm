@@ -10,17 +10,15 @@ import Foundation
 
 class TwoSum {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var dict = [Int: Int]()
-        
-        for (i, num) in nums.enumerated() {
-            if let lastIndex = dict[target - num] {
-                return [lastIndex, i]
+        var dic = [Int : Int]()
+        for (i,num) in nums.enumerated(){
+            if let lastIndex = dic[target - num]{
+                return [lastIndex,i]
             }
-            
-            dict[num] = i
+            dic[num] = i
         }
-        
         fatalError("No valid outputs")
+
     }
 }
 
